@@ -28,7 +28,7 @@ module.exports = {
       m: ["24px", { lineHeight: "32px", fontWeight: 700 }],
       body: ["18px", { lineHeight: "28px", fontWeight: 500 }],
     },
-    extend: {},
+    extend: { display: ["group-hover"] },
   },
   plugins: [require("@tailwindcss/forms")],
 };
