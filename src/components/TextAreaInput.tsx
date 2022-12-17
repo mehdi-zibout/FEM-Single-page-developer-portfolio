@@ -4,7 +4,7 @@ const TextAreaInput = ({ fieldName, error }: TextInputProps) => {
   return (
     <label
       htmlFor={fieldName}
-      className=" w-[21.4rem] tablet:w-[27.8rem]   flex flex-col"
+      className=" w-[21.4rem] tablet:w-[27.8rem]   flex flex-col px-4 "
     >
       <span className="invisible">={fieldName}</span>
       <textarea
@@ -13,7 +13,7 @@ const TextAreaInput = ({ fieldName, error }: TextInputProps) => {
         id={fieldName}
         cols={30}
         rows={4}
-        className={` resize-none focus:outline-none ring-0 focus:ring-0 border-t-0 border-r-0 border-l-0 pb-4 pl-6  ${
+        className={`bg-opacity-0 bg-green resize-none focus:outline-none ring-0 focus:ring-0 border-t-0 border-r-0 border-l-0 pb-4 pl-6  ${
           error ? "border-b-[#FF6F5B]" : "border-b-white"
         } focus:border-b-green
            border-b-[1px] tablet:border-b-2 w-full  bg-darkGrey`}

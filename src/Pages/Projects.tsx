@@ -54,24 +54,29 @@ const projects: projectType[] = [
 ];
 const Projects = () => {
   return (
-    <div className="w-screen">
-      <div className="mx-4">
+    <div className="w-full">
+      <div className="">
         <div className="flex  justify-between items-center ">
           <div className="text-l text-[40px]">Projects</div>
-          <Button className="pt-20 text-m text-[1rem] tracking-[2.25px] mb-20">
+          <Button
+            onClick={() => document.getElementById("contact")?.scrollIntoView()}
+            className="pt-20 text-m text-[1rem] tracking-[2.25px] mb-20"
+          >
             CONTACT ME
           </Button>
         </div>
-        {projects.map((project) => {
-          return (
-            <Project
-              key={project[0]}
-              thumbnails={project[2]}
-              title={project[1]}
-              technologies={project[3]}
-            />
-          );
-        })}
+        <div className="flex items-center flex-col tablet:grid tablet:grid-cols-2">
+          {projects.map((project) => {
+            return (
+              <Project
+                key={project[0]}
+                thumbnails={project[2]}
+                title={project[1]}
+                technologies={project[3]}
+              />
+            );
+          })}
+        </div>
       </div>
     </div>
   );

@@ -1,62 +1,44 @@
-import githubImg from "../assets/images/icon-github.svg";
-import frontendmentorImg from "../assets/images/icon-frontend-mentor.svg";
-import linkedinImg from "../assets/images/icon-linkedin.svg";
-import twitterImg from "../assets/images/icon-twitter.svg";
-import mobileProfile from "../assets/images/image-profile-mobile.webp";
+import Socials from "../components/Socials";
 import patternRings from "../assets/images/pattern-rings.svg";
 import patternCircle from "../assets/images/pattern-circle.svg";
 import Button from "../components/Button";
 
 const Hero = () => {
   return (
-    <div className="w-screen relative">
-      <div className="absolute mx-auto left-0 right-0 pt-5">
-        <div className="flex flex-col tablet:flex-row items-center tablet:justify-between">
-          <div className="text-m tablet:p-8 pc:pl-40 mb-5 tablet:mb-0">
-            adamkeyes
+    <div
+      className={`relative w-screen px-4 tablet:px-7 pc:w-full bg-[url("./assets/images/image-profile-mobile.webp"),url("./assets/images/pattern-rings.svg"),url("./assets/images/pattern-circle.svg")] 
+      tablet:bg-[url("./assets/images/pattern-circle.svg"),url("./assets/images/pattern-rings.svg"),url("./assets/images/image-profile-tablet.webp")] pc:bg-[url("./assets/images/pattern-circle.svg"),url("./assets/images/pattern-rings.svg"), url("./assets/images/image-profile-desktop.webp")] 
+      bg-[position:top_center,_-320px_125px,_125%_40%]  bg-[size:174px_383px,_auto,_auto] tablet:bg-[size:auto,_auto,_322px_600px] pc:bg-[size:auto,_auto,_contain_445px_720px]   pc:bg-[position:_76%_75%,_-300px_65px,_top_right]  tablet:bg-[position:_110%_87%,_-300px_65px,_top_right]   bg-no-repeat`}
+    >
+      <Socials />
+
+      <div className="mt-[300px] tablet:mt-0 text-center tablet:text-left">
+        <div className="text-l text-[2.5rem] tablet:text-[4.73rem] pc:text-xl  pb-6">
+          Nice to{" "}
+          <div className="inline tablet:block pc:inline tablet:pb-6 tablet:pt-2 ">
+            meet you!{" "}
+            <span className="hidden tablet:inline pc:hidden">I’m</span>{" "}
           </div>
-          <div className="flex justify-evenly tablet:p-8 pc:pr-44">
-            <img src={githubImg} alt="Github" className=" px-3" />
-            <img
-              src={frontendmentorImg}
-              alt="FrontendMentor"
-              className="  px-3"
-            />
-            <img src={linkedinImg} alt="Linkedin" className="  px-3" />
-            <img src={twitterImg} alt="twitter" className="  px-3" />
+          <div className="pc:mt-4">
+            <span className=" tablet:hidden pc:inline">I’m</span>{" "}
+            <span className="border-b-4 border-green">Adam Keyes</span>.
           </div>
         </div>
-      </div>
-      <div className="relative flex justify-center z-50">
-        <img
-          src={mobileProfile}
-          alt="Profile Picture"
-          width={174}
-          height={383}
-        />
-      </div>
-      <div className="absolute top-36 -left-[360px] z-0">
-        <img src={patternRings} alt="rings" className="overflow-hidden" />
-      </div>
-      <div className="absolute bottom-[365px] -right-[70px] z-0 ">
-        <img src={patternCircle} alt="cercle" className="overflow-hidden" />
-      </div>
-      <div className="text-l text-[2.5rem]  text-center pb-6">
-        Nice to meet you!{" "}
-        <div>
-          {" "}
-          I’m
-          <span className="border-b-4 border-green"> Adam Keyes</span>.
+        <div className="text-body text-[1rem] tablet:mt-10 tablet:text-body text-grey ">
+          Based in the UK, I’m a front-end developer{" "}
+          <div className="inline tablet:block">
+            passionate about building accessible web apps
+          </div>{" "}
+          that users love.
         </div>
-      </div>
-      <div className="text-body text-[1rem] text-center">
-        Based in the UK, I’m a front-end developer passionate about building
-        accessible web apps that users love.
-      </div>
-      <div className="flex justify-center pt-6">
-        <Button className="text-m text-[1rem] tracking-[2.25px] mb-20">
-          CONTACT ME
-        </Button>
+        <div className="flex justify-center tablet:justify-start pt-6 mb-12 tablet:mb-[9rem]">
+          <Button
+            onClick={() => document.getElementById("contact")?.scrollIntoView()}
+            className="text-m text-[1rem] tracking-[2.25px] "
+          >
+            CONTACT ME
+          </Button>
+        </div>
       </div>
     </div>
   );
