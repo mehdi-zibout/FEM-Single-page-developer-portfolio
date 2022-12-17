@@ -1,6 +1,13 @@
-export type TextInputProps = { fieldName: string; error?: string };
+export type TextInputProps = {
+  x: any;
+  fieldName: string;
+  error?: string;
+} & React.DetailedHTMLProps<
+  React.InputHTMLAttributes<HTMLInputElement>,
+  HTMLInputElement
+>;
 
-const TextInput = ({ fieldName, error }: TextInputProps) => {
+const TextInput = ({ x, fieldName, error, ...props }: TextInputProps) => {
   return (
     <label
       htmlFor={fieldName}
@@ -8,6 +15,8 @@ const TextInput = ({ fieldName, error }: TextInputProps) => {
     >
       <span className="invisible">={fieldName}</span>
       <input
+        {...x}
+        {...props}
         type="text"
         className={`bg-opacity-0 bg-green focus:outline-none ring-0 focus:ring-0 border-t-0 border-r-0 border-l-0 pb-4 pl-6  ${
           error ? "border-b-[#FF6F5B]" : "border-b-white"

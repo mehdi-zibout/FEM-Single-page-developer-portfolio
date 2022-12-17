@@ -1,6 +1,17 @@
-import { TextInputProps } from "./TextInput";
-
-const TextAreaInput = ({ fieldName, error }: TextInputProps) => {
+export type TextAreaInputProps = {
+  x: any;
+  fieldName: string;
+  error?: string;
+} & React.DetailedHTMLProps<
+  React.TextareaHTMLAttributes<HTMLTextAreaElement>,
+  HTMLTextAreaElement
+>;
+const TextAreaInput = ({
+  x,
+  fieldName,
+  error,
+  ...props
+}: TextAreaInputProps) => {
   return (
     <label
       htmlFor={fieldName}
@@ -8,6 +19,8 @@ const TextAreaInput = ({ fieldName, error }: TextInputProps) => {
     >
       <span className="invisible">={fieldName}</span>
       <textarea
+        {...x}
+        {...props}
         placeholder={fieldName.toUpperCase()}
         name={fieldName}
         id={fieldName}
